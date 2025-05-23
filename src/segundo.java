@@ -73,10 +73,10 @@ public class segundo {
         sumarFilas(laberinto);
         
         double promedioImpares = promedioNumerosInpares(laberinto);
-        System.out.println("2. Promedio de los numeros impares: " + promedioImpares);
+        System.out.println("Promedio de los numeros impares es ----- " + promedioImpares);
         //2. Calcular el promedio de los números impares. 🎯
 
         
-        scanner.close();
+        scanner.close(); 
     }
 }
