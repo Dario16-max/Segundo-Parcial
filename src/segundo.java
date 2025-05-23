@@ -35,20 +35,21 @@ public class segundo {
         }
     }
 
-     public static void promedioNumerosPares (int[][] matriz) {
-        int n = matriz.length;
-        double acumulador = 0;
-        for (int fila = 0; fila < n; fila++) {
-            for (int col = 0; col < matriz[fila].length; col++) {
-                 if ((matriz[fila][col]/2) != 0){
-                    acumulador = matriz[fila][col];
-                    
-                 }
-
+  public static double promedioNumerosInpares(int[][] matriz) {
+    int n = matriz.length;
+    int suma = 0;
+    int acumulador = 0;
+    for (int fila = 0; fila < n; fila++) {
+        for (int col = 0; col < matriz[fila].length; col++) {
+            if (matriz[fila][col] % 2 != 0) {
+                suma += matriz[fila][col];
+                acumulador++;
+            }
         }
-        }
-
-     }
+    }
+    if (acumulador == 0) return 0;
+    return (double) suma / acumulador;
+}
     public static void main(String[] args) {
         int[][] laberinto = new int[5][5];
         Random random = new Random();
@@ -71,6 +72,8 @@ public class segundo {
         System.out.println("Suma de los valores de cada fila:");
         sumarFilas(laberinto);
         
+        double promedioImpares = promedioNumerosInpares(laberinto);
+        System.out.println("2. Promedio de los numeros impares: " + promedioImpares);
         //2. Calcular el promedio de los números impares. 🎯
 
         
